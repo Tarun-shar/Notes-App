@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Notes App</string>
+    <string name="app_name">To-Do List App</string>
     <string name="title">Title</string>
     <string name="note">Note</string>
     <string name="date">Date</string>

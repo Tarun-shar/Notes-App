@@ -35,10 +35,8 @@ class ItemAdapter(private var context:Context , val listener: NotesClickListener
         holder.binding.tvDate.text = currentNote.date
         holder.binding.tvDate.isSelected = true
 
-//        set random color
-        holder.binding.cardLayout.setCardBackgroundColor(holder.itemView.resources.getColor(randomColor(), null))
 
-//        set Click Listener
+//        set On Click Listener
         holder.binding.cardLayout.setOnClickListener {
 
             listener.onItemClicked(notesList[holder.adapterPosition])
@@ -80,24 +78,6 @@ class ItemAdapter(private var context:Context , val listener: NotesClickListener
 
     }
 
-
-//    Create an method for random color generator
-
-    private fun randomColor() : Int {
-
-        val list = ArrayList<Int>()
-        list.add(R.color.NoteColor1)
-        list.add(R.color.NoteColor2)
-        list.add(R.color.NoteColor3)
-        list.add(R.color.NoteColor4)
-        list.add(R.color.NoteColor5)
-        list.add(R.color.NoteColor6)
-
-        val seed = System.currentTimeMillis().toInt()
-        val randomIndex = Random(seed).nextInt(list.size)
-        return list[randomIndex]
-
-    }
 
     interface NotesClickListener{
         fun onItemClicked(note: Note)
